@@ -16,11 +16,11 @@ namespace BankofdotNet.ConsoleClent
         private static async Task MainAsync()
         {
             string apiEndPoint = "http://localhost:58840/api/customers";
-            string IdentityEndPoint = "http://localhost:5000";
+            string identityEndPoint = "http://localhost:5000";
 
             //controllo se ci sono client connessi all'authority di is4
             //resource owner grant-type
-            var discoRO = await DiscoveryClient.GetAsync(IdentityEndPoint);
+            var discoRO = await DiscoveryClient.GetAsync(identityEndPoint);
             if (discoRO.IsError)
             {
                 Console.WriteLine(discoRO.Error);
@@ -41,7 +41,7 @@ namespace BankofdotNet.ConsoleClent
 
 
             //controllo se ci sono client connessi all'authority di is4
-            var disco = await DiscoveryClient.GetAsync(IdentityEndPoint);
+            var disco = await DiscoveryClient.GetAsync(identityEndPoint);
             if (disco.IsError)
             {
                 Console.WriteLine(disco.Error);

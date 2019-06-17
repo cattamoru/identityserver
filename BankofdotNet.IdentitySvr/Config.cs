@@ -39,11 +39,12 @@ namespace BankofdotNet.IdentitySvr
 
         }
 
-        //creo i client per il grant_type ClientCredential 
+        
         public static IEnumerable<Client> GetClients()
         {
             return new List<Client>
             {
+                //ClientCredential grant
                 new Client
                 {
                     ClientId = "client",
